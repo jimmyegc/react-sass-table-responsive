@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+.responsiveTable {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-color);
+}
+
+.tableHeader {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px;
+  text-align: left;
+  min-width: 100px;
+  max-width: 300px;
+  white-space: nowrap;
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--border-color);
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.tableCell {
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

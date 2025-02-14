@@ -1,0 +1,112 @@
+@use "../variables";
+
+// Variables
+//$primary-color: crimson;
+//$secondary-color: #f4f4f4;
+//$border-color: #ddd;
+//$shadow-color: rgba(0, 0, 0, 0.1);
+//$input-border: #ccc;
+
+// Mixins
+@mixin flex-center($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin input-style {
+  position: absolute;
+  width: 90%;
+  bottom: 5px;
+  left: 5px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+header {
+  @include flex-center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  background: var(--secondary-color);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px var(--shadow-color);
+  overflow-x: auto;
+}
+
+.responsive-table {
+  
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+
+  th, td {
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    text-align: left;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  th {
+    background-color: var(--primary-color);
+    color: white;
+  }
+}
+
+.indicator {
+  margin-left: 5px;
+}
+
+.filter-container {
+  @include flex-center;
+  gap: 5px;
+}
+
+.col-small {
+  width: 10%;
+}
+
+.col-medium {
+  width: 20%;
+}
+
+.col-large {
+  width: 30%;
+}
+
+.col-small .filter-container {
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.col-medium, .col-large {
+  .filter-container {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  input {
+    @include input-style;
+  }
+}
+
+.col-medium input {
+  /* background-color: yellowgreen; */
+}
+
+.col-large input {
+  width: 95%;
+ /*  background-color: rebeccapurple; */
+}

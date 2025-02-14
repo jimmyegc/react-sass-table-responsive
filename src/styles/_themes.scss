@@ -1,0 +1,47 @@
+$themes: (
+  light: (
+    bg-color: #ffffff,
+    text-color: #333,
+    primary-color: #007bff
+  ),
+  dark: (
+    bg-color: #222,
+    text-color: #fff,
+    primary-color: #ff4081
+  ),
+  alternative: (
+    bg-color: #f4e04d,
+    text-color: #333,
+    primary-color: #ff5733
+  ),
+);
+
+// Generamos las clases de temas dinámicamente
+@each $theme, $map in $themes {
+  .theme-#{$theme} {
+    @each $property, $value in $map {
+      --#{$property}: #{$value};
+    }
+  }
+}
+
+// Estilos globales usando variables CSS
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: brightness(90%);
+  }
+}

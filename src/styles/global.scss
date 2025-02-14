@@ -1,0 +1,38 @@
+//*@use "./variables";
+//@use "./themes";
+// */
+
+@use './variables';
+@use './themes/light';
+@use "./components/table";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  text-align: center;
+  padding: 20px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    // background-color: darken(var(--primary-color), 10%);
+  }
+}

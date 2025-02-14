@@ -1,0 +1,48 @@
+// Variables para los tamaños de las tablas
+$table-sizes: (
+  small: 400px,
+  medium: 800px,
+  large: 1200px
+);
+
+// Mixin para definir encabezados responsivos
+@mixin responsive-header($size) {
+  @if $size == small {
+    th {
+      display: flex;
+      flex-direction: column; // Apila texto e ícono
+      align-items: center;
+      text-align: center;
+    }
+  } @else if $size == medium {
+    th {
+      display: flex;
+      flex-direction: row; // Mantiene en línea
+      align-items: center;
+      justify-content: space-between;
+    }
+  } @else if $size == large {
+    th {
+      display: inline-block;
+      text-align: left;
+    }
+  }
+}
+
+// Aplicar estilos según la variante
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+  }
+
+  @each $size, $max-width in $table-sizes {
+    &.#{$size} {
+      @include responsive-header($size);
+    }
+  }
+}

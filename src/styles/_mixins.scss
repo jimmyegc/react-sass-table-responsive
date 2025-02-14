@@ -1,0 +1,8 @@
+@mixin table-header-style {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
