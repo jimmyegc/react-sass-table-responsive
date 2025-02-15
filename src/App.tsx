@@ -3,8 +3,7 @@ import "./styles/global.scss";
 import { TableResponsive } from "./components/TableResponsive/TableResponsive";
 import { Table } from "./components/Table/Table";
 import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
-import "./styles/global.scss";
-import "./styles/_themes.scss";
+
 
 const columns = [
   { key: "checkbox", label: "✔" },
